@@ -108,7 +108,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!114 &7718021211896821216
 MonoBehaviour:
@@ -124,6 +124,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   jumpForce: 10
   gravityModifier: 1
+  isOnGround: 1
+  gameOver: 0
+  horizontalInput: 0
+  speed: 10
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0

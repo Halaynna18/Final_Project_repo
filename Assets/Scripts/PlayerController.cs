@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public bool gameOver = false;
     public float horizontalInput;
     public float speed = 10f;
+    public GameObject projectilePrefabs;
+    public float fireDelay = 10.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +23,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        {
+            
+        }
+        {
+            
+        }
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
         if (Input.GetKey(KeyCode.Space) && isOnGround)

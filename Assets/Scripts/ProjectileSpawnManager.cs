@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileSpawnManager : MonoBehaviour
@@ -8,9 +9,11 @@ public class ProjectileSpawnManager : MonoBehaviour
     private float spawnPosY = 20f;
     private float startDelay = 1.0f;
     private float spawnInterval = 4.0f;
+    private float topBound = 30;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+     
         Invoke("SpawnRandomProjectile", startDelay);
     }
     void SpawnRandomProjectile()
@@ -26,6 +29,9 @@ public class ProjectileSpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      if (transform.position.z > topBound)
+        {
+            Destroy(gameObject);
+        }
     }
 }
