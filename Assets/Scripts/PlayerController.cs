@@ -7,20 +7,27 @@ public class PlayerController : MonoBehaviour
     public float gravityModifier;
     public bool isOnGround = true;
     public bool gameOver = false;
+    public float horizontalInput;
+    public float speed = 10f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
         if (Input.GetKey(KeyCode.Space) && isOnGround)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
+            
         }
     }
     private void OnCollisionEnter(Collision collision)
